@@ -1,5 +1,4 @@
 import Banner from "../Banner/Banner";
-import Footer from "../Footer/Footer";
 import Work from "../HowItWorks/Work";
 import PremiumCard from "../PremiumCard/PremiumCard";
 import SuccessCounter from "../SuccessCounter/SuccessCounter";
@@ -13,7 +12,6 @@ const Home = () => {
             <Work/>
             <SuccessCounter/>
             <SuccessStory/>
-            <Footer/>
         </div>
     );
 };
