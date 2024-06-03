@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const EditBiodata = () => {
   const { user } = useContext(AuthContext);
@@ -25,26 +27,36 @@ const EditBiodata = () => {
     const email = user.email;
     const phone = form.phone.value;
 
-    console.log(
-      name,
-      biodataType,
-      dateOfBirth,
-      age,
-      height,
-      weight,
-      occupation,
-      imgUrl,
-      race,
-      fatherName,
-      motherName,
-      permanentDivision,
-      presentDivision,
-      expectedAge,
-      expectedHeight,
-      expectedWeight,
-      email,
-      phone
-    );
+    try{
+      const response = await axios.get('http://localhost:9000/next-id');
+      const { id } = response.data;
+      const biodata = {
+        id,
+        name,
+        biodataType,
+        dateOfBirth,
+        age,
+        height,
+        weight,
+        occupation,
+        imgUrl,
+        race,
+        fatherName,
+        motherName,
+        permanentDivision,
+        presentDivision,
+        expectedAge,
+        expectedHeight,
+        expectedWeight,
+        email,
+        phone,
+      };
+      await axios.post('http://localhost:9000/biodatas', biodata)
+      form.reset()
+      toast.success('Biodata Saved Successfully.')
+    }catch(err){
+      toast.error(err.message)
+    }
   };
   return (
     <div className="w-full px-4 py-6 min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50">
@@ -115,7 +127,7 @@ const EditBiodata = () => {
                 <select
                   required
                   className="w-full px-3 py-2 text-gray-800 border border-[#E5007D] focus:outline-[#E5007D] rounded-md"
-                  name="heightFeet"
+                  name="height"
                 >
                   <option value="">Feet</option>
                   <option value="5'1''">5'1''</option>
@@ -141,7 +153,6 @@ const EditBiodata = () => {
                   className="w-full px-3 py-2 text-gray-800 border border-[#E5007D] focus:outline-[#E5007D] rounded-md"
                   name="weight"
                 >
-
                   <option value="">Select Weight</option>
                   <option value="50">50</option>
                   <option value="55">55</option>
@@ -164,11 +175,11 @@ const EditBiodata = () => {
                   <option value="Teacher">Teacher</option>
                   <option value="Software Engineer">Software Engineer</option>
                   <option value="Pilot">Pilot</option>
-                  <option value="Other">Other</option>
                   <option value="Doctor">Doctor</option>
                   <option value="Nurse">Nurse</option>
                   <option value="Lawyer">Lawyer</option>
                   <option value="Accountant">Accountant</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
             </div>

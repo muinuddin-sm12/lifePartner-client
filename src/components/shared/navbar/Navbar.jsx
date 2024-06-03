@@ -51,7 +51,7 @@ const Navbar = () => {
                   to="/"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-[#36a3f7] border border-[#36a3f7] rounded-md px-2 py-1"
+                      ? "text-[#E5007D] border border-[#E5007D] rounded-md px-2 py-1"
                       : ""
                   }
                 >
@@ -61,7 +61,7 @@ const Navbar = () => {
                   to="/biodatas"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-[#36a3f7] border border-[#36a3f7] rounded-md px-2 py-1"
+                      ? "text-[#E5007D] border border-[#E5007D] rounded-md px-2 py-1"
                       : ""
                   }
                 >
@@ -73,7 +73,7 @@ const Navbar = () => {
                       to="/dashboard"
                       className={({ isActive }) =>
                         isActive
-                          ? "text-[#36a3f7] border border-[#36a3f7] rounded-md px-2 py-1"
+                          ? "text-[#E5007D] border border-[#E5007D] rounded-md px-2 py-1"
                           : ""
                       }
                     >
@@ -87,7 +87,7 @@ const Navbar = () => {
                     to="/about-us"
                     className={({ isActive }) =>
                       isActive
-                        ? "text-[#36a3f7] border border-[#36a3f7] rounded-md px-2 py-1"
+                        ? "text-[#E5007D] border border-[#E5007D] rounded-md px-2 py-1"
                         : ""
                     }
                   >
@@ -101,7 +101,7 @@ const Navbar = () => {
                     to="/contact-us"
                     className={({ isActive }) =>
                       isActive
-                        ? "text-[#36a3f7] border border-[#36a3f7] rounded-md px-2 py-1"
+                        ? "text-[#E5007D] border border-[#E5007D] rounded-md px-2 py-1"
                         : ""
                     }
                   >
@@ -122,7 +122,7 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? "text-[#36a3f7] px-2 py-1" : ""
+                isActive ? "text-[#E5007D] px-2 py-1" : ""
               }
             >
               Home
@@ -130,7 +130,7 @@ const Navbar = () => {
             <NavLink
               to="/biodatas"
               className={({ isActive }) =>
-                isActive ? "text-[#08D5FF] px-2 py-1" : ""
+                isActive ? "text-[#E5007D] px-2 py-1" : ""
               }
             >
               Biodatas
@@ -139,7 +139,7 @@ const Navbar = () => {
               <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
-                  isActive ? "text-[#08D5FF] px-2 py-1" : ""
+                  isActive ? "text-[#E5007D] px-2 py-1" : ""
                 }
               >
                 Dashboard
@@ -148,7 +148,7 @@ const Navbar = () => {
             <NavLink
               to="/about-us"
               className={({ isActive }) =>
-                isActive ? "text-[#08D5FF] px-2 py-1" : ""
+                isActive ? "text-[#E5007D] px-2 py-1" : ""
               }
             >
               About Us
@@ -156,7 +156,7 @@ const Navbar = () => {
             <NavLink
               to="/contact-us"
               className={({ isActive }) =>
-                isActive ? "text-[#08D5FF] px-2 py-1" : ""
+                isActive ? "text-[#E5007D] px-2 py-1" : ""
               }
             >
               Contact Us
