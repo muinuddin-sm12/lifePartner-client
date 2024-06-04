@@ -9,7 +9,9 @@ import EditBiodata from "../components/dashboard/EditBiodata";
 import ViewBiodata from "../components/dashboard/ViewBiodata";
 import MyContactRequest from "../components/dashboard/MyContactRequest";
 import FavouritesBiodatas from "../components/dashboard/FavouritesBiodatas";
-import BiodataCard from "../components/BiodataCard";
+import Biodatas from "../components/Biodatas";
+import AboutUs from "../components/AboutUs";
+import ContactUs from "../components/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +25,15 @@ export const router = createBrowserRouter([
         },
         {
           path: '/biodatas',
-          element: <BiodataCard/>
+          element: <Biodatas/>
+        },
+        {
+          path: '/about-us',
+          element: <AboutUs/>
+        },
+        {
+          path: '/contact-us',
+          element: <ContactUs/>
         }
     ]
   },

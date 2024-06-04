@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AiFillEdit, AiOutlineBars } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import logo from "../../../public/logo.png";
@@ -9,9 +9,11 @@ import { RiContactsBookUploadFill, RiLogoutBoxRFill } from "react-icons/ri";
 import axios from "axios";
 import { MdManageAccounts, MdSpaceDashboard, MdWorkspacePremium } from "react-icons/md";
 import { VscGitPullRequestNewChanges } from "react-icons/vsc";
+import toast from "react-hot-toast";
 const Sidebar = () => {
   const { user } = useContext(AuthContext);
   const { logOut } = useContext(AuthContext);
+  const navigate = useNavigate()
   const [isActive, setActive] = useState(false);
   const [users, setUsers] = useState([]);
 
@@ -31,6 +33,11 @@ const Sidebar = () => {
     };
     fetchUsers();
   }, [user]);
+  const handleLogOut = async () => {
+    await logOut()
+    toast.success('Logout Successful')
+    navigate('/')
+  }
 
   return (
     <>
@@ -68,7 +75,7 @@ const Sidebar = () => {
       >
         <div>
           <div>
-            <div className="w-full hidden md:flex px-4 py-2 shadow-lg  justify-center items-center  mx-auto">
+            <div className="w-full hidden md:flex px-4 py-2 justify-center items-center  mx-auto">
               <Link to="/">
                 <div className="flex items-center gap-2">
                   <img
@@ -208,7 +215,7 @@ const Sidebar = () => {
 
         <div>
           <button
-            onClick={logOut}
+            onClick={handleLogOut}
             className="flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform"
           >
             <RiLogoutBoxRFill className="w-5 h-5" />

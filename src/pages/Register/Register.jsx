@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
+import registerImg from '../../assets/image/registerImg.jpg'
 
 const Register = () => {
   const navigate = useNavigate();
+  const location = useLocation()
+  const from = location?.state || '/'
   const {
     createUser,
     signInWithGoogle,
@@ -33,7 +36,7 @@ const Register = () => {
       await updateUserProfile(name, image);
 
       await axios.post('http://localhost:9000/users', userData)
-      navigate("/");
+      navigate(from);
       toast.success("Signup Successful");
     } catch (err) {
       console.log(err);
@@ -49,7 +52,7 @@ const Register = () => {
 
       await axios.post('http://localhost:9000/users', userData)
 
-      navigate("/");
+      navigate(from);
       toast.success("Signup Successful");
     } catch (err) {
       console.log(err);
@@ -58,7 +61,11 @@ const Register = () => {
   };
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
+      <div className="flex rounded-lg overflow-hidden sm:m-10">
+        <div className="max-w-md">
+          <img src={registerImg} className="h-full object-cover" alt="" />
+        </div>
+        <div className="flex flex-col max-w-md p-6 bg-gray-100 text-gray-900">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign Up</h1>
           <p className="text-sm text-gray-400">Welcome to Life Partner</p>
@@ -158,6 +165,7 @@ const Register = () => {
             Login
           </Link>
         </p>
+      </div>
       </div>
     </div>
   );

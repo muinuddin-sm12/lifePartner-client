@@ -1,9 +1,8 @@
+import ViewDetails from "../ViewDetails"
 
 const ViewBiodata = () => {
     return (
-        <div>
-            View Biodata Route
-        </div>
+        <ViewDetails/>
     );
 };
 

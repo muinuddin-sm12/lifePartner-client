@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const EditBiodata = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate()
   const handleForm = async (event) => {
     event.preventDefault();
     const form = event.target;
@@ -54,6 +56,7 @@ const EditBiodata = () => {
       await axios.post('http://localhost:9000/biodatas', biodata)
       form.reset()
       toast.success('Biodata Saved Successfully.')
+      navigate('/')
     }catch(err){
       toast.error(err.message)
     }

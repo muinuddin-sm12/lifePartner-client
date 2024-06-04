@@ -1,15 +1,16 @@
+/* eslint-disable react/prop-types */
 import { FaEye, FaRegHeart } from "react-icons/fa";
 
-const BiodataCard = () => {
+const BiodataCard = ({data}) => {
   return (
     <div className="border w-[350px] rounded-xl p-6 shadow-lg">
       <div className="flex justify-between items-center border-b pb-6">
         <div className="flex items-center gap-2">
           <div className="h-12 w-12 rounded-full overflow-hidden border-2 border-[#E5007D]">
-            <img src="" alt="" />
+            <img src={data?.imgUrl} alt="" />
           </div>
           <div>
-            <p className="font-medium">Biodata No: </p>
+            <p className="font-medium">Biodata No: {data?.id}</p>
             <div className="flex items-center gap-1">
               <FaEye /> 1
             </div>
@@ -25,16 +26,16 @@ const BiodataCard = () => {
           <div className="w-1/2">Unmarried</div>
         </div>
         <div className="flex justify-between items-center py-2">
-          <div className="w-1/2 font-medium">Permanent Address</div>
-          <div className="w-1/2">Rajshahi</div>
+          <div className="w-1/2 font-medium">Permanent Division</div>
+          <div className="w-1/2">{data?.permanentDivision}</div>
         </div>
         <div className="flex justify-between items-center py-2">
           <div className="w-1/2 font-medium">Date of Birth</div>
-          <div className="w-1/2">17/12/1991</div>
+          <div className="w-1/2">{data?.dateOfBirth}</div>
         </div>
         <div className="flex justify-between items-center py-2">
           <div className="w-1/2 font-medium">Occupation</div>
-          <div className="w-1/2">Businessman</div>
+          <div className="w-1/2">{data?.occupation}</div>
         </div>
       </div>
         <div className="w-full">
