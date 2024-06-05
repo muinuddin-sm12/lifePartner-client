@@ -23,7 +23,7 @@ const Banner = () => {
           </p>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <Link
-              to="/"
+              to="/biodatas"
               className="px-8 py-3 text-lg bg-[#E5007D] text-white hover:bg-black font-semibold border rounded-full"
             >
               Find Partner

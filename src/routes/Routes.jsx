@@ -12,6 +12,7 @@ import FavouritesBiodatas from "../components/dashboard/FavouritesBiodatas";
 import Biodatas from "../components/Biodatas";
 import AboutUs from "../components/AboutUs";
 import ContactUs from "../components/ContactUs";
+import ViewProfile from "../components/ViewProfile";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
         {
           path: '/contact-us',
           element: <ContactUs/>
+        },
+        {
+          path: '/view-profile/:id',
+          element: <ViewProfile/>
         }
     ]
   },

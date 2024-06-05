@@ -19,8 +19,8 @@ const Biodatas = () => {
     console.log(biodataType, from, to)
   }
   return (
-    <div className="px-4 md:px-10 my-16 flex">
-      <div className="max-w-sm min-h-screen border p-4 rounded-lg">
+    <div className="px-4 md:px-10 my-16 flex items-start">
+      <div className="max-w-sm border p-4 rounded-lg">
         <h2 className="text-center text-lg font-medium py-3">Filter Options</h2>
         <form onSubmit={handleForm}>
           <div className="py-4">
@@ -39,7 +39,7 @@ const Biodatas = () => {
             </div>
           </div>
           <div>
-            <h2 className="text-gray-600 text-sm">Search by Age</h2>
+            <h2 className="text-gray-600 text-sm pb-1">Search by Age</h2>
             <div className=" text-sm">
               <input
                 className="w-full px-3 py-2 mb-2 text-gray-800 border border-[#E5007D] focus:outline-[#E5007D] rounded-md "
