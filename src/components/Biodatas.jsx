@@ -3,21 +3,36 @@ import BiodataCard from "./BiodataCard";
 
 const Biodatas = () => {
   const [data, setData] = useState([]);
+  const [mainData, setMainData] = useState([]);
   useEffect(() => {
     fetch("http://localhost:9000/biodatas")
       .then((res) => res.json())
       .then((data) => {
+        console.log("Fetched data:", data);
         setData(data);
+        setMainData(data);
       });
-  });
-  const handleForm = async(event) => {
-    event.preventDefault()
-    const form = event.target
-    const biodataType = form.biodata_type.value 
-    const from = form.from.value 
-    const to = form.to.value 
-    console.log(biodataType, from, to)
-  }
+  }, []);
+  const handleForm = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const biodataType = form.biodata_type.value;
+    const from = parseInt(form.from.value, 10);
+    const to = parseInt(form.to.value, 10);
+
+    console.log("Form values:", { biodataType, from, to }); // Debugging: Print form values
+    console.log("Main data before filtering:", mainData);
+    // Filter the original data based on the form inputs
+    const filteredData = mainData.filter((item) => {
+      const age = parseInt(item.age, 10); // Assuming 'age' is the field in your data
+      const typeMatches = biodataType ? item.biodataType === biodataType : true; // Assuming 'type' is the field in your data
+      const ageMatches = age >= from && age <= to;
+      console.log(`Item: ${item._id}, Type Matches: ${typeMatches}, Age Matches: ${ageMatches}, Age: ${age}, Type: ${item.type}`);
+      return typeMatches && ageMatches;
+    });
+    console.log("Filtered Data:", filteredData);
+    setData(filteredData);
+  };
   return (
     <div className="px-4 md:px-10 my-16 flex items-start">
       <div className="max-w-sm border p-4 rounded-lg">
@@ -47,7 +62,6 @@ const Biodatas = () => {
                 id="from"
                 type="number"
                 placeholder="from"
-                required
               />
             </div>
             <div className=" text-sm">
@@ -61,16 +75,24 @@ const Biodatas = () => {
               />
             </div>
             <div>
-              <input type="submit" value="Filter" className="w-full py-2 bg-[#E5007D] mt-5 rounded-lg text-white font-medium cursor-pointer" />
+              <input
+                type="submit"
+                value="Filter"
+                className="w-full py-2 bg-[#E5007D] mt-5 rounded-lg text-white font-medium cursor-pointer"
+              />
             </div>
           </div>
         </form>
       </div>
       <div className="flex-1">
         <div className="flex flex-wrap justify-center mx-auto gap-6">
-          {data.map((biodata) => (
-            <BiodataCard key={biodata._id} data={biodata} />
-          ))}
+          {data.length > 0 ? (
+            data.map((biodata) => (
+              <BiodataCard key={biodata._id} data={biodata} />
+            ))
+          ) : (
+            <p>There is no matched data</p>
+          )}
         </div>
       </div>
     </div>
