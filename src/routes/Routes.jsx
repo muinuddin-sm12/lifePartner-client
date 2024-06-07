@@ -13,57 +13,76 @@ import Biodatas from "../components/Biodatas";
 import AboutUs from "../components/AboutUs";
 import ContactUs from "../components/ContactUs";
 import ViewProfile from "../components/ViewProfile";
+import AdminDash from "../components/dashboard/AdminDash";
+import PrivateRoutes from "./PrivateRoutes";
+import GotMarried from "../components/dashboard/GotMarried";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
-    errorElement: <ErrorPage/>,
+    element: <Main />,
+    errorElement: <ErrorPage />,
     children: [
-        {
-            path: '/',
-            element: <Home/>
-        },
-        {
-          path: '/biodatas',
-          element: <Biodatas/>
-        },
-        {
-          path: '/about-us',
-          element: <AboutUs/>
-        },
-        {
-          path: '/contact-us',
-          element: <ContactUs/>
-        },
-        {
-          path: '/view-profile/:id',
-          element: <ViewProfile/>
-        }
-    ]
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/biodatas",
+        element: <Biodatas />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
+      },
+      {
+        path: "/view-profile/:id",
+        element: (
+          <PrivateRoutes>
+            <ViewProfile />
+          </PrivateRoutes>
+        ),
+      },
+    ],
   },
-  {path: '/login', element: <Login/>},
-  {path: '/register', element: <Register/>},
+  { path: "/login", element: <Login /> },
+  { path: "/register", element: <Register /> },
   {
-    path: '/dashboard',
-    element: <DashboardLayout/>,
+    path: "/dashboard",
+    element: (
+      <PrivateRoutes>
+        <DashboardLayout />
+      </PrivateRoutes>
+    ),
     children: [
       {
-        path: 'edit-biodata',
-        element: <EditBiodata/>
+        path: "edit-biodata",
+        element: <EditBiodata />,
       },
       {
-        path: 'view-biodata',
-        element: <ViewBiodata/>
+        path: "view-biodata",
+        element: <ViewBiodata />,
       },
       {
-        path: 'my-contact-request',
-        element: <MyContactRequest/>
+        path: "my-contact-request",
+        element: <MyContactRequest />,
       },
       {
-        path: 'favourites-biodatas',
-        element: <FavouritesBiodatas/>
-      }
-    ]
-  }
+        path: "favourites-biodatas",
+        element: <FavouritesBiodatas />,
+      },
+      {
+        path: "got-married",
+        element: <GotMarried/>,
+      },
+      {
+        path: "admin-dashboard",
+        element: <AdminDash />,
+      },
+    ],
+  },
 ]);

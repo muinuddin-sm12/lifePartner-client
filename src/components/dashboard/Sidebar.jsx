@@ -10,6 +10,7 @@ import axios from "axios";
 import { MdManageAccounts, MdSpaceDashboard, MdWorkspacePremium } from "react-icons/md";
 import { VscGitPullRequestNewChanges } from "react-icons/vsc";
 import toast from "react-hot-toast";
+import { GiEngagementRing } from "react-icons/gi";
 const Sidebar = () => {
   const { user } = useContext(AuthContext);
   const { logOut } = useContext(AuthContext);
@@ -149,6 +150,20 @@ const Sidebar = () => {
                 >
                   <FaHeart className="w-5 h-5" />
                   <span className="mx-4 font-medium">Favourites Biodata</span>
+                </NavLink>
+              )}
+              {/* Got Married */}
+              {users?.role === "User" && (
+                <NavLink
+                  to="got-married"
+                  className={({ isActive }) =>
+                    `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
+                    }`
+                  }
+                >
+                  <GiEngagementRing className="w-5 h-5" />
+                  <span className="mx-4 font-medium">Got Married</span>
                 </NavLink>
               )}
               {/* Admin Dashboard */}

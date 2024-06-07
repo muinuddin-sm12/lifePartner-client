@@ -37,7 +37,7 @@ const Login = () => {
     try {
       const result = await signInWithGoogle();
       const {displayName, email} = result.user;
-      const userData = {name: displayName, email, role: 'User'}
+      const userData = {name: displayName, email, role: 'User', status: 'Normal'}
 
       await axios.post('http://localhost:9000/users', userData)
 

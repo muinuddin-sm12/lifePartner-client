@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const EditBiodata = () => {
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleForm = async (event) => {
     event.preventDefault();
     const form = event.target;
@@ -29,11 +29,8 @@ const EditBiodata = () => {
     const email = user.email;
     const phone = form.phone.value;
 
-    try{
-      const response = await axios.get('http://localhost:9000/next-id');
-      const { id } = response.data;
+    try {
       const biodata = {
-        id,
         name,
         biodataType,
         dateOfBirth,
@@ -53,12 +50,12 @@ const EditBiodata = () => {
         email,
         phone,
       };
-      await axios.post('http://localhost:9000/biodatas', biodata)
-      form.reset()
-      toast.success('Biodata Saved Successfully.')
-      navigate('/')
-    }catch(err){
-      toast.error(err.message)
+      await axios.post("http://localhost:9000/biodatas", biodata);
+      form.reset();
+      toast.success("Biodata Saved Successfully.");
+      navigate("/");
+    } catch (err) {
+      toast.error(err.message);
     }
   };
   return (
@@ -175,13 +172,21 @@ const EditBiodata = () => {
                   name="occupation"
                 >
                   <option value="">Select Occupation</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Software Engineer">Software Engineer</option>
-                  <option value="Pilot">Pilot</option>
+                  <option value="Architect">Architect</option>
+                  <option value="Carpenter">Carpenter</option>
+                  <option value="Chef">Chef</option>
                   <option value="Doctor">Doctor</option>
-                  <option value="Nurse">Nurse</option>
+                  <option value="Engineer">Engineer</option>
+                  <option value="Farmer">Farmer</option>
                   <option value="Lawyer">Lawyer</option>
-                  <option value="Accountant">Accountant</option>
+                  <option value="Nurse">Nurse</option>
+                  <option value="Pharmacist">Pharmacist</option>
+                  <option value="Pilot">Pilot</option>
+                  <option value="Pilot">Pilot</option>
+                  <option value="Police Officer">Police Officer</option>
+                  <option value="Software Engineer">Software Engineer</option>
+                  <option value="Teacher">Teacher</option>
+                  <option value="Writer">Writer</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -259,8 +264,12 @@ const EditBiodata = () => {
                   <option value="">Select Permanent Division</option>
                   <option value="Dhaka">Dhaka</option>
                   <option value="Chattagram">Chattagram</option>
+                  <option value="Rajshahi">Rajshahi</option>
+                  <option value="Khulna">Khulna</option>
+                  <option value="Barishal">Barishal</option>
+                  <option value="Sylhet">Sylhet</option>
                   <option value="Rangpur">Rangpur</option>
-                  <option value="Other">Other</option>
+                  <option value="Mymensingh">Mymensingh</option>
                 </select>
               </div>
               <div className="space-y-1 text-sm">
@@ -275,8 +284,12 @@ const EditBiodata = () => {
                   <option value="">Select Present Division</option>
                   <option value="Dhaka">Dhaka</option>
                   <option value="Chattagram">Chattagram</option>
+                  <option value="Rajshahi">Rajshahi</option>
+                  <option value="Khulna">Khulna</option>
+                  <option value="Barishal">Barishal</option>
+                  <option value="Sylhet">Sylhet</option>
                   <option value="Rangpur">Rangpur</option>
-                  <option value="Other">Other</option>
+                  <option value="Mymensingh">Mymensingh</option>
                 </select>
               </div>
             </div>
@@ -377,7 +390,7 @@ const EditBiodata = () => {
           type="submit"
           className="w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-[#E5007D]"
         >
-          Save & Continue
+          Save & Publish Now
         </button>
       </form>
     </div>

@@ -26,14 +26,24 @@ const FavouritesBiodatas = () => {
   const handleDelete = async (id) => {
     // console.log(id)
     try {
-        const response = await axios.delete(`http://localhost:9000/favourites/${id}`);
-        if (response.status === 200) {
-          setData(data.filter(item => item._id !== id));
-          toast.success("Deleted successfully");
-        }
-      } catch (error) {
-        toast.error("Error deleting item");
+      const response = await axios.delete(
+        `http://localhost:9000/favourites/${id}`
+      );
+      if (response.status === 200) {
+        setData(data.filter((item) => item._id !== id));
+        toast.success("Deleted successfully");
       }
+    } catch (error) {
+      toast.error("Error deleting item");
+    }
+  };
+  // console.log(data.length)
+  if (data.length < 1) {
+    return (
+      <div>
+        <p>No data available</p>
+      </div>
+    );
   }
   return (
     <div className="overflow-x-auto ">
@@ -64,7 +74,10 @@ const FavouritesBiodatas = () => {
               <td className="text-sm pl-4">{item?.permanentDivision}</td>
               <td className="text-sm pl-4">{item?.occupation}</td>
               <td className="pl-5">
-                <button onClick={()=>handleDelete(item._id)} className="bg-[#E5007D] text-sm font-medium text-white px-3 py-1 rounded-lg">
+                <button
+                  onClick={() => handleDelete(item._id)}
+                  className="bg-[#E5007D] text-sm font-medium text-white px-3 py-1 rounded-lg"
+                >
                   Delete
                 </button>
               </td>

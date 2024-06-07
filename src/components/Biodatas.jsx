@@ -8,7 +8,6 @@ const Biodatas = () => {
     fetch("http://localhost:9000/biodatas")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched data:", data);
         setData(data);
         setMainData(data);
       });
@@ -16,21 +15,18 @@ const Biodatas = () => {
   const handleForm = async (event) => {
     event.preventDefault();
     const form = event.target;
-    const biodataType = form.biodata_type.value;
+    const biodataType = form?.biodata_type.value;
+    const division = form?.division.value;
     const from = parseInt(form.from.value, 10);
     const to = parseInt(form.to.value, 10);
 
-    console.log("Form values:", { biodataType, from, to }); // Debugging: Print form values
-    console.log("Main data before filtering:", mainData);
-    // Filter the original data based on the form inputs
     const filteredData = mainData.filter((item) => {
-      const age = parseInt(item.age, 10); // Assuming 'age' is the field in your data
-      const typeMatches = biodataType ? item.biodataType === biodataType : true; // Assuming 'type' is the field in your data
+      const age = parseInt(item.age, 10);
+      const typeMatches = biodataType ? item?.biodataType === biodataType : true;
+      const divisionMatches = division ? item?.permanentDivision === division : true;
       const ageMatches = age >= from && age <= to;
-      console.log(`Item: ${item._id}, Type Matches: ${typeMatches}, Age Matches: ${ageMatches}, Age: ${age}, Type: ${item.type}`);
-      return typeMatches && ageMatches;
+      return typeMatches && divisionMatches && ageMatches;
     });
-    console.log("Filtered Data:", filteredData);
     setData(filteredData);
   };
   return (
@@ -38,7 +34,7 @@ const Biodatas = () => {
       <div className="max-w-sm border p-4 rounded-lg">
         <h2 className="text-center text-lg font-medium py-3">Filter Options</h2>
         <form onSubmit={handleForm}>
-          <div className="py-4">
+          <div className="pt-4">
             <div className="space-y-1 text-sm">
               <label htmlFor="biodata_type" className="text-gray-600">
                 Biodata Type
@@ -53,8 +49,29 @@ const Biodatas = () => {
               </select>
             </div>
           </div>
+          <div className="pb-1">
+            <div className="space-y-1 text-sm">
+              <label htmlFor="division" className="text-gray-600">
+                Division
+              </label>
+              <select
+                className="w-full px-3 py-2 text-gray-800 border border-[#E5007D] focus:outline-[#E5007D] rounded-md"
+                name="division"
+              >
+                <option value="">Select Division</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Chattagram">Chattagram</option>
+                <option value="Rajshahi">Rajshahi</option>
+                <option value="Khulna">Khulna</option>
+                <option value="Barishal">Barishal</option>
+                <option value="Sylhet">Sylhet</option>
+                <option value="Rangpur">Rangpur</option>
+                <option value="Mymensingh">Mymensingh</option>
+              </select>
+            </div>
+          </div>
           <div>
-            <h2 className="text-gray-600 text-sm pb-1">Search by Age</h2>
+            <h2 className="text-gray-600 text-sm pb-1">Filter by Age</h2>
             <div className=" text-sm">
               <input
                 className="w-full px-3 py-2 mb-2 text-gray-800 border border-[#E5007D] focus:outline-[#E5007D] rounded-md "
@@ -62,6 +79,7 @@ const Biodatas = () => {
                 id="from"
                 type="number"
                 placeholder="from"
+                required
               />
             </div>
             <div className=" text-sm">
@@ -91,7 +109,9 @@ const Biodatas = () => {
               <BiodataCard key={biodata._id} data={biodata} />
             ))
           ) : (
-            <p>There is no matched data</p>
+            <div className="flex justify-center items-center">
+              <p className="font-medium">No Data Available</p>
+            </div>
           )}
         </div>
       </div>

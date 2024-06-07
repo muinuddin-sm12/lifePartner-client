@@ -24,7 +24,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const image = form.image.value;
-    const userData = {name, email, role:'User'}
+    const userData = {name, email, role:'User', status: 'Normal'}
 
     try {
       setLoading(true);
@@ -48,7 +48,7 @@ const Register = () => {
     try {
       const result = await signInWithGoogle();
       const {displayName, email} = result.user;
-      const userData = {name: displayName, email, role: 'User'}
+      const userData = {name: displayName, email, role: 'User', status: 'Normal'}
 
       await axios.post('http://localhost:9000/users', userData)
 
