@@ -12,8 +12,9 @@ const gotMarried = () => {
         const successStory = {selfId, partnerId, coupleImage, story}
         // console.log(successStory)
         try{
-            await axios.post('http://localhost:9000/success-story', successStory)
+            await axios.post('http://localhost:9000/success-stories', successStory)
             toast.success('Story saved successfully.')
+            form.reset()
         }catch(err){
             toast.error(err.message)
         }
