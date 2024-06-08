@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import ScrollToTop from "./ScrollToTop";
 
 const ViewProfile = () => {
   const [data, setData] = useState([]);
@@ -52,6 +53,8 @@ const ViewProfile = () => {
   };
   return (
     <div className="p-6 border max-w-2xl mx-auto  rounded-2xl my-10">
+      <ScrollToTop />
+
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className="h-12 w-12 rounded-full overflow-hidden border-2 border-[#E5007D]">
@@ -106,11 +109,13 @@ const ViewProfile = () => {
           )}
         </div>
       </div>
-      <div className="w-full">
-        <button className="w-full bg-[#E5007D] py-2 text-white font-medium rounded-md my-3">
-        Request Contact Information
-        </button>
-      </div>
+      {current?.status === "Normal" && (
+        <div className="w-full">
+          <button className="w-full bg-[#E5007D] py-2 text-white font-medium rounded-md my-3">
+            Request Contact Information
+          </button>
+        </div>
+      )}
     </div>
   );
 };

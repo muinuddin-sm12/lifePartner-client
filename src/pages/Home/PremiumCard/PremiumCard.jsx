@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const PremiumCard = () => {
   const [user, setUser] = useState("");
+  const [sort, setSort] = useState("");
   const [biodata, setBiodata] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:9000/users")
       .then((res) => res.json())
@@ -24,14 +26,38 @@ const PremiumCard = () => {
         });
     }
   }, [user]);
+  const sortedBiodata = React.useMemo(() => {
+    if (sort === "Ascending") {
+      return [...biodata].sort((a, b) => a.age - b.age);
+    } else if (sort === "Descending") {
+      return [...biodata].sort((a, b) => b.age - a.age);
+    } else {
+      return biodata;
+    }
+  }, [sort, biodata]);
   // console.log(biodata);
   return (
     <div className="px-4 md:px-10 my-16 md:my-32 ">
       <div className="w-full text-center pb-16">
         <h3 className="text-3xl font-bold">Our Premium Members</h3>
       </div>
+      <div className="w-full flex justify-end max-w-[1536px] mx-auto px-4 md:px-10 mt-8 mb-4">
+        <select
+          onChange={(e) => {
+            setSort(e.target.value);
+          }}
+          value={sort}
+          name="age"
+          id="age"
+          className="rounded-lg btn bg-[#E5007D] px-4 py-2 border-none text-white outline-none"
+        >
+          <option value="">Sort By Age</option>
+          <option value="Ascending">Ascending</option>
+          <option value="Descending">Descending</option>
+        </select>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
-        {biodata?.map((data) => (
+        {sortedBiodata?.map((data) => (
           <div
             key={data?._id}
             className="w-full max-w-sm mx-auto rounded-lg p-6 flex flex-col overflow-hidden  border-[1px] shadow-lg dark:bg-gray-800 hover:border-[#E5007D] hover:scale-105 duration-200"
