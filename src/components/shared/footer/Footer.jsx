@@ -9,27 +9,27 @@ const Footer = () => {
             <ul className="m-5 text-sm">
               <h3 className="mb-2 text-xl font-semibold">Life Partner</h3>
               <li className="my-1">
-                <a href="#" className="text-gray-500">
+                <a href="/" className="text-gray-500">
                   Home
                 </a>
               </li>
               <li className="my-1">
-                <a href="#" className="text-gray-500">
-                  Catalog
+                <a href="/biodatas" className="text-gray-500">
+                  Biodatas
                 </a>
               </li>
               <li className="my-1">
-                <a href="#" className="text-gray-500">
-                  Search
+                <a href="/dashboard" className="text-gray-500">
+                  Dashboard
                 </a>
               </li>
               <li className="my-1">
-                <a href="#" className="text-gray-500">
+                <a href="/about-us" className="text-gray-500">
                   About
                 </a>
               </li>
               <li className="my-1">
-                <a href="#" className="text-gray-500">
+                <a href="/contact-us" className="text-gray-500">
                   Contact
                 </a>
               </li>
@@ -81,12 +81,12 @@ const Footer = () => {
                 name="newsletter_email"
                 id="newsletter_email"
                 placeholder="Email"
-                className="px-2 py-1 border outline-none border-gray-400"
+                className="px-2 py-1 border outline-none rounded-l-lg border-gray-400"
               />
               <input
                 type="button"
                 value="Submit"
-                className="px-3 py-1 ml-2 bg-[#E5007D] text-white border border-[#E5007D] cursor-pointer"
+                className="px-3 py-1 bg-[#E5007D] text-white rounded-r-lg border border-[#E5007D] cursor-pointer"
               />
             </form>
           </div>

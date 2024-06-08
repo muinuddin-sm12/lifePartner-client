@@ -27,7 +27,7 @@ const ViewProfile = () => {
         setCurrent(matchUser[0]);
       });
   }, [user]);
-  console.log(data);
+  // console.log(data);
   if (!data) {
     return (
       <div className="min-h-screen w-full flex justify-center items-center">

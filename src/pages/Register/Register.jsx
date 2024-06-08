@@ -29,9 +29,8 @@ const Register = () => {
     try {
       setLoading(true);
       //   1. User Registration
+      // eslint-disable-next-line no-unused-vars
       const result = await createUser(email, password);
-      console.log(result);
-
       //   2. Save username and photo in firebase
       await updateUserProfile(name, image);
 

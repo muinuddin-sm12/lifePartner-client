@@ -8,8 +8,10 @@ const gotMarried = () => {
         const selfId = form.selfId.value 
         const partnerId = form.partnerId.value 
         const coupleImage = form.imgUrl.value 
+        const marryDate = form.date.value 
+        const rating = form.rating.value 
         const story = form.successStory.value 
-        const successStory = {selfId, partnerId, coupleImage, story}
+        const successStory = {selfId, partnerId, coupleImage,marryDate, rating, story}
         // console.log(successStory)
         try{
             await axios.post('http://localhost:9000/success-stories', successStory)
@@ -61,6 +63,32 @@ const gotMarried = () => {
                 id="imgUrl"
                 type="text"
                 placeholder="Image URL"
+                required
+              />
+            </div>
+            <div className="space-y-1 text-sm">
+              <label htmlFor="date" className="text-gray-600">
+                Select Marriage Date
+              </label>
+              <input
+                className="w-full px-3 py-2 mb-2 text-gray-800 border border-[#E5007D] focus:outline-[#E5007D] rounded-md "
+                name="date"
+                id="date"
+                type="date"
+                placeholder="Marriage Date"
+                required
+              />
+            </div>
+            <div className="space-y-1 text-sm">
+              <label htmlFor="rating" className="text-gray-600">
+                Give a Rating
+              </label>
+              <input
+                className="w-full px-3 py-2 mb-2 text-gray-800 border border-[#E5007D] focus:outline-[#E5007D] rounded-md "
+                name="rating"
+                id="rating"
+                type="number"
+                placeholder="Give rating between 1 to 5"
                 required
               />
             </div>

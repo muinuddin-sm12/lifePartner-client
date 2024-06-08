@@ -182,7 +182,6 @@ const EditBiodata = () => {
                   <option value="Nurse">Nurse</option>
                   <option value="Pharmacist">Pharmacist</option>
                   <option value="Pilot">Pilot</option>
-                  <option value="Pilot">Pilot</option>
                   <option value="Police Officer">Police Officer</option>
                   <option value="Software Engineer">Software Engineer</option>
                   <option value="Teacher">Teacher</option>

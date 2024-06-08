@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { Pie, PieChart, Tooltip } from "recharts";
 
 const AdminDash = () => {
-
   const [total, setTotal] = useState('')
   const [male, setMale] = useState('')
-  const [Female, setFemale] = useState('')
+  const [female, setFemale] = useState('')
   useEffect(()=> {
     fetch('http://localhost:9000/biodatas')
     .then(res => res.json())
@@ -16,12 +15,12 @@ const AdminDash = () => {
       const filterFemale = data.filter(female => female.biodataType === 'Female')
       setFemale(filterFemale.length)
     })
-
   },[])
-  const data01 = [
+
+  const data = [
     { name: 'Total Biodatas', value: total },
     { name: 'Premium Biodatas', value: 5 },
-    { name: 'Female Biodatas', value: Female },
+    { name: 'Female Biodatas', value: female },
     { name: 'Male Biodatas', value: male },
   ];
   return (
@@ -30,7 +29,7 @@ const AdminDash = () => {
           <Pie
             dataKey="value"
             isAnimationActive={false}
-            data={data01}
+            data={data}
             cx="50%"
             cy="50%"
             outerRadius={120}
