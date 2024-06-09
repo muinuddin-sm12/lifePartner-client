@@ -50,7 +50,7 @@ const EditBiodata = () => {
         email,
         phone,
       };
-      await axios.post("http://localhost:9000/biodatas", biodata);
+      await axios.post("https://life-partner-server.vercel.app/biodatas", biodata);
       form.reset();
       toast.success("Biodata Saved Successfully.");
       navigate("/");

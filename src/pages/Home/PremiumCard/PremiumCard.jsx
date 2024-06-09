@@ -7,7 +7,7 @@ const PremiumCard = () => {
   const [biodata, setBiodata] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9000/users")
+    fetch("https://life-partner-server.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         const premiumUser = data.filter((d) => d.status === "Premium");
@@ -16,7 +16,7 @@ const PremiumCard = () => {
   }, []);
   useEffect(() => {
     if (user.length > 0) {
-      fetch("http://localhost:9000/biodatas")
+      fetch("https://life-partner-server.vercel.app/biodatas")
         .then((res) => res.json())
         .then((data) => {
           const premiumBiodata = data.filter((p) =>

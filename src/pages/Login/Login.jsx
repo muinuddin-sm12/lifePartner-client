@@ -27,7 +27,7 @@ const Login = () => {
       navigate(from);
       toast.success("Signup Successful");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error(err.message);
       setLoading(false);
     }
@@ -39,12 +39,12 @@ const Login = () => {
       const {displayName, email} = result.user;
       const userData = {name: displayName, email, role: 'User', status: 'Normal'}
 
-      await axios.post('http://localhost:9000/users', userData)
+      await axios.post('https://life-partner-server.vercel.app/users', userData)
 
       navigate(from);
       toast.success("Signup Successful");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error(err.message);
     }
   };

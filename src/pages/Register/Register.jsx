@@ -34,11 +34,11 @@ const Register = () => {
       //   2. Save username and photo in firebase
       await updateUserProfile(name, image);
 
-      await axios.post('http://localhost:9000/users', userData)
+      await axios.post('https://life-partner-server.vercel.app/users', userData)
       navigate(from);
       toast.success("Signup Successful");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error(err.message);
     }
   };
@@ -49,12 +49,12 @@ const Register = () => {
       const {displayName, email} = result.user;
       const userData = {name: displayName, email, role: 'User', status: 'Normal'}
 
-      await axios.post('http://localhost:9000/users', userData)
+      await axios.post('https://life-partner-server.vercel.app/users', userData)
 
       navigate(from);
       toast.success("Signup Successful");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error(err.message);
     }
   };
