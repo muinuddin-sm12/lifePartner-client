@@ -6,7 +6,7 @@ const SuccessCounter = () => {
   const [female, setFemale] = useState('')
   const [success, setSuccess] = useState('')
   useEffect(()=> {
-    fetch('https://life-partner-server.vercel.app/biodatas')
+    fetch('http://localhost:9000/biodatas')
     .then(res => res.json())
     .then(data => {
       setTotal(data.length)
@@ -17,7 +17,7 @@ const SuccessCounter = () => {
     })
   },[])
   useEffect(() => {
-    fetch('https://life-partner-server.vercel.app/success-stories')
+    fetch('http://localhost:9000/success-stories')
     .then(res => res.json())
     .then(data => setSuccess(data.length))
   })

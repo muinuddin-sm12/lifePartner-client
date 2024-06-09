@@ -5,7 +5,7 @@ const ViewDetails = () => {
   const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`https://life-partner-server.vercel.app/biodatas/email/${user?.email}`)
+    fetch(`http://localhost:9000/biodatas/email/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data[0]);

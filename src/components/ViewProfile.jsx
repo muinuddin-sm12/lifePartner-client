@@ -17,12 +17,12 @@ const ViewProfile = () => {
   const { id } = useParams();
   // const navigate = useNavigate()
   useEffect(() => {
-    fetch(`https://life-partner-server.vercel.app/biodatas/${id}`)
+    fetch(`http://localhost:9000/biodatas/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [id]);
   useEffect(() => {
-    fetch("https://life-partner-server.vercel.app/users")
+    fetch("http://localhost:9000/users")
       .then((res) => res.json())
       .then((data) => {
         const matchUser = data.filter((item) => item.email === user.email);
@@ -40,7 +40,7 @@ const ViewProfile = () => {
   const handleFavourite = async () => {
     try {
       const newData = { ...data, favEmail: user.email };
-      const response = axios.post("https://life-partner-server.vercel.app/favourites", newData);
+      const response = axios.post("http://localhost:9000/favourites", newData);
       const data2 = response.data;
       // console.log(data2);
       toast.success("Added to Favourite");

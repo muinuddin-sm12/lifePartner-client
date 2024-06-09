@@ -16,6 +16,7 @@ import ViewProfile from "../components/ViewProfile";
 import AdminDash from "../components/dashboard/AdminDash";
 import PrivateRoutes from "./PrivateRoutes";
 import GotMarried from "../components/dashboard/GotMarried";
+import ManageUsers from "../components/dashboard/ManageUsers";
 
 export const router = createBrowserRouter([
   {
@@ -83,6 +84,10 @@ export const router = createBrowserRouter([
         path: "admin-dashboard",
         element: <AdminDash />,
       },
+    {
+      path: "manage-users",
+      element: <ManageUsers/>
+    }
     ],
   },
 ]);

@@ -14,7 +14,7 @@ const gotMarried = () => {
         const successStory = {selfId, partnerId, coupleImage,marryDate, rating, story}
         // console.log(successStory)
         try{
-            await axios.post('https://life-partner-server.vercel.app/success-stories', successStory)
+            await axios.post('http://localhost:9000/success-stories', successStory)
             toast.success('Story saved successfully.')
             form.reset()
         }catch(err){

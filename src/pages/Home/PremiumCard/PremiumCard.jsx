@@ -7,7 +7,7 @@ const PremiumCard = () => {
   const [biodata, setBiodata] = useState([]);
 
   useEffect(() => {
-    fetch("https://life-partner-server.vercel.app/users")
+    fetch("http://localhost:9000/users")
       .then((res) => res.json())
       .then((data) => {
         const premiumUser = data.filter((d) => d.status === "Premium");
@@ -16,7 +16,7 @@ const PremiumCard = () => {
   }, []);
   useEffect(() => {
     if (user.length > 0) {
-      fetch("https://life-partner-server.vercel.app/biodatas")
+      fetch("http://localhost:9000/biodatas")
         .then((res) => res.json())
         .then((data) => {
           const premiumBiodata = data.filter((p) =>
@@ -57,7 +57,7 @@ const PremiumCard = () => {
         </select>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
-        {sortedBiodata?.map((data) => (
+        {sortedBiodata?.slice(0, 8).map((data) => (
           <div
             key={data?._id}
             className="w-full max-w-sm mx-auto rounded-lg p-6 flex flex-col overflow-hidden  border-[1px] shadow-lg dark:bg-gray-800 hover:border-[#E5007D] hover:scale-105 duration-200"
