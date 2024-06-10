@@ -17,7 +17,7 @@ const SuccessStory = () => {
   // console.log(story);
   return (
     <div className="px-4 md:mx-10 my-16 md:my-32 ">
-      <div className="max-w-[76%] mx-auto">
+      <div className="lg:max-w-[76%] mx-auto">
         <div className="w-full text-center mb-16">
           <h3 className="text-3xl font-bold">Our Success Stories</h3>
         </div>

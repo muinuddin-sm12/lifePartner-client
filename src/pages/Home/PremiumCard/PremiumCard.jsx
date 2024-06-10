@@ -38,7 +38,7 @@ const PremiumCard = () => {
   // console.log(biodata);
   return (
     <div className="px-4 md:px-10 my-16 md:my-32 ">
-      <div className="w-full text-center pb-16">
+      <div className="w-full text-center md:pb-16 pb-6">
         <h3 className="text-3xl font-bold">Our Premium Members</h3>
       </div>
       <div className="w-full flex justify-end max-w-[1536px] mx-auto px-4 md:px-10 mt-8 mb-4">

@@ -18,6 +18,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import GotMarried from "../components/dashboard/GotMarried";
 import ManageUsers from "../components/dashboard/ManageUsers";
 import ApprovePremium from "../components/dashboard/ApprovePremium";
+import ApprovedContact from "../components/dashboard/ApprovedContact";
 
 export const router = createBrowserRouter([
   {
@@ -92,6 +93,10 @@ export const router = createBrowserRouter([
       {
         path: "approved-premium",
         element: <ApprovePremium/>
+      },
+      {
+        path: "approved-contact",
+        element: <ApprovedContact/>
       }
     ],
   },

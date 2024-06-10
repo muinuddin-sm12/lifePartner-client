@@ -2,7 +2,7 @@
 const StorySlides = ({img, story, date, rating}) => {
   return (
     <div>
-      <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md border">
+      <div className="flex flex-col w-[280px] h-[320px] gap-3 lg:p-6 mx-auto rounded-md border">
         <div className="flex justify-between p-4">
           <div className="flex space-x-4 items-center">
             <div className="h-12 w-12 rounded-full overflow-hidden">
@@ -13,7 +13,6 @@ const StorySlides = ({img, story, date, rating}) => {
               />
             </div>
             <div>
-              {/* <h4 className="font-bold">Leroy Jenkins</h4> */}
               <span className="text-xs dark:text-gray-600">{date}</span>
             </div>
           </div>

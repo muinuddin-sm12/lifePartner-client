@@ -51,7 +51,7 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center min-h-screen ">
       <div className="flex rounded-lg overflow-hidden sm:m-10">
-        <div className="max-w-md">
+        <div className="max-w-md hidden lg:block">
           <img src={loginImg} alt="" />
         </div>
         <div className="flex flex-col max-w-md p-6 bg-gray-100 text-gray-900">

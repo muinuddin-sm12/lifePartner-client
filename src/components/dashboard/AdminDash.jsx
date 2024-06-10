@@ -32,7 +32,7 @@ const AdminDash = () => {
             data={data}
             cx="50%"
             cy="50%"
-            outerRadius={120}
+            outerRadius={150}
             fill="#E5007D"
             label
           />

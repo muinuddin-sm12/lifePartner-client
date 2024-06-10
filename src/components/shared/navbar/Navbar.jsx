@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className="w-full bg-base-100  z-[99]">
       <div className="flex justify-between items-center px-4 md:px-10 py-5">
         <div className="flex items-center gap-2">
-          <div className="dropdown">
+          <div className="dropdown ">
             <div
               tabIndex={0}
               role="button"
@@ -45,7 +45,7 @@ const Navbar = () => {
             {isOpen && (
               <ul
                 tabIndex={0}
-                className="flex flex-col space-y-2 absolute mt-3 z-[99] p-4 shadow rounded-box w-48 "
+                className="flex flex-col space-y-2 bg-gray-50 rounded-xl absolute mt-3 z-[99] p-4 shadow rounded-box w-48 "
               >
                 <NavLink
                   to="/"
@@ -81,7 +81,6 @@ const Navbar = () => {
                     </NavLink>
                   </>
                 )}
-                {/* ( */}
                 <>
                   <NavLink
                     to="/about-us"
@@ -94,8 +93,6 @@ const Navbar = () => {
                     About Us
                   </NavLink>
                 </>
-                {/* ) */}
-                {/* ( */}
                 <>
                   <NavLink
                     to="/contact-us"
