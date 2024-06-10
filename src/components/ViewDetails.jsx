@@ -1,9 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import ApprovePremium from "./dashboard/ApprovePremium";
+import toast from "react-hot-toast";
 
 const ViewDetails = () => {
   const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
+  const [requestId, setRequestId] = useState(null);
   useEffect(() => {
     fetch(`http://localhost:9000/biodatas/email/${user?.email}`)
       .then((res) => res.json())
@@ -14,6 +17,11 @@ const ViewDetails = () => {
   if (!data) {
     return <div>No Data Available</div>;
   }
+  const handlePremium = async (id) => {
+    setRequestId(id)
+    toast.success("Request Send Successfully!")
+  }
+  console.log(data?._id)
   return (
     <div className="p-6 border max-w-2xl rounded-2xl">
       <div className="flex items-center gap-2">
@@ -50,9 +58,10 @@ const ViewDetails = () => {
         </div>
       </div>
       <div className="w-full">
-        <button className="w-full bg-[#E5007D] py-2 text-white font-medium rounded-md my-3">
+        <button onClick={() => handlePremium(data?._id)} className="w-full bg-[#E5007D] py-2 text-white font-medium rounded-md my-3">
           Make Premium
         </button>
+        {requestId && <ApprovePremium id={requestId} />}
       </div>
     </div>
   );

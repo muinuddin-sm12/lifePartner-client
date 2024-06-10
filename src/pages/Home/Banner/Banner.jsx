@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Banner = () => {
   return (
@@ -19,15 +20,18 @@ const Banner = () => {
             Partner
           </h1>
           <p className="mt-6 mb-8 text-lg sm:mb-12">
-          Find your soulmate and write your love story together. Let our trusted matchmaking service be your guide.
+            Find your soulmate and write your love story together. Let our
+            trusted matchmaking service be your guide.
           </p>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-            <Link
-              to="/biodatas"
-              className="px-8 py-3 text-lg bg-[#E5007D] text-white hover:bg-black font-semibold border rounded-full"
-            >
-              Find Partner
-            </Link>
+            <div className="flex items-center gap-2 px-6 py-2 text-lg  font-semibold border rounded-full bg-[#E5007D] hover:bg-black text-white">
+              <Link
+                to="/biodatas"
+              >
+                Find Partner
+              </Link>
+              <FaLongArrowAltRight />
+            </div>
           </div>
         </div>
         <div className="lg:w-1/2 w-full overflow-hidden lg:rounded-3xl mt-8 lg:mt-0">

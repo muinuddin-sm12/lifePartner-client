@@ -19,7 +19,6 @@ const ManageUsers = () => {
         `http://localhost:9000/users/${id}`,
         updatedUser
       );
-      // Assuming the API returns the updated user data
       const updatedUsers = users.map((user) =>
         user._id === id ? { ...user, status: response.data.status } : user
       );
@@ -39,7 +38,6 @@ const ManageUsers = () => {
         `http://localhost:9000/users/${id}`,
         updatedUser
       );
-      // Assuming the API returns the updated user data
       const updatedUsers = users.map((user) =>
         user._id === id ? { ...user, status: response.data.status } : user
       );
@@ -59,7 +57,6 @@ const ManageUsers = () => {
         `http://localhost:9000/users/${id}`,
         updatedUser
       );
-      // Assuming the API returns the updated user data
       const updatedUsers = users.map((user) =>
         user._id === id ? { ...user, role: response.data.role } : user
       );
@@ -79,7 +76,6 @@ const ManageUsers = () => {
         `http://localhost:9000/users/${id}`,
         updatedUser
       );
-      // Assuming the API returns the updated user data
       const updatedUsers = users.map((user) =>
         user._id === id ? { ...user, role: response.data.role } : user
       );

@@ -12,9 +12,10 @@ const Work = () => {
             <div className="w-full text-center py-16 ">
                 <h3 className="text-3xl font-bold">How Does It Works?</h3>
             </div>
-            <div className=" w-full px-52 mx-auto pt-10 pb-24">
+            <div className="w-full lg:px-52 px-6 mx-auto pt-10 pb-24">
                 {/* card  */}
-                <div className='flex justify-between items-center'>
+                <div className='grid grid-cols-2 space-y-10 gap-6
+                 md:grid-cols-2 lg:grid-cols-4'>
                     <WorkCard icon={icon_1} text='Create Account' number='1'/>
                     <WorkCard icon={icon_2} text='Browse Profiles' number='2'/>
                     <WorkCard icon={icon_3} text='Connect' number='3'/>
