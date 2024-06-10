@@ -90,7 +90,7 @@ const Navbar = () => {
                         : ""
                     }
                   >
-                    About Us
+                    About Me
                   </NavLink>
                 </>
                 <>
@@ -148,7 +148,7 @@ const Navbar = () => {
                 isActive ? "text-[#E5007D] px-2 py-1" : ""
               }
             >
-              About Us
+              About Me
             </NavLink>
             <NavLink
               to="/contact-us"

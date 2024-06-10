@@ -10,7 +10,6 @@ import ViewBiodata from "../components/dashboard/ViewBiodata";
 import MyContactRequest from "../components/dashboard/MyContactRequest";
 import FavouritesBiodatas from "../components/dashboard/FavouritesBiodatas";
 import Biodatas from "../components/Biodatas";
-import AboutUs from "../components/AboutUs";
 import ContactUs from "../components/ContactUs";
 import ViewProfile from "../components/ViewProfile";
 import AdminDash from "../components/dashboard/AdminDash";
@@ -19,6 +18,7 @@ import GotMarried from "../components/dashboard/GotMarried";
 import ManageUsers from "../components/dashboard/ManageUsers";
 import ApprovePremium from "../components/dashboard/ApprovePremium";
 import ApprovedContact from "../components/dashboard/ApprovedContact";
+import AboutMe from "../pages/About/AboutMe";
 
 export const router = createBrowserRouter([
   {
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/about-us",
-        element: <AboutUs />,
+        element: <AboutMe />,
       },
       {
         path: "/contact-us",
