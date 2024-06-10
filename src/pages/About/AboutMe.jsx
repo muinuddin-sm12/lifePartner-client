@@ -2,8 +2,8 @@ import image from '../../assets/image/profile.jpeg'
 
 const AboutMe = () => {
     return (
-        <div className="min-h-screen w-full flex items-center justify-center">
-            <div className='flex items-center gap-20'>
+        <div className="py-20  w-full flex items-center justify-center">
+            <div className='flex flex-col md:flex-row items-center gap-20'>
                 <div className='h-60 w-60 rounded-full overflow-hidden'>
                     <img className='h-full' src={image} alt="" />
                 </div>
