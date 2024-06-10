@@ -23,8 +23,8 @@ const Banner = () => {
             Find your soulmate and write your love story together. Let our
             trusted matchmaking service be your guide.
           </p>
-          <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-            <div className="flex items-center gap-2 px-6 py-2 text-lg  font-semibold border rounded-full bg-[#E5007D] hover:bg-black text-white">
+          <div>
+            <div className="flex items-center w-52 gap-2 px-6 py-2 text-lg  font-semibold border rounded-full bg-[#E5007D] hover:bg-black text-white">
               <Link
                 to="/biodatas"
               >
@@ -34,7 +34,7 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-1/2 w-full overflow-hidden lg:rounded-3xl mt-8 lg:mt-0">
+        <div className="lg:w-1/2 w-full overflow-hidden lg:rounded-3xl mt-8 lg:mt-0 mb-10 md:mb-0">
           {/* <img src={banner} alt="" className="object-cover h-full"/> */}
           <Swiper
             spaceBetween={30}
