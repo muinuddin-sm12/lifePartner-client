@@ -10,7 +10,7 @@ const FavouritesBiodatas = () => {
   const { user } = useContext(AuthContext);
   useEffect(() => {
     if (user && user.email) {
-      fetch(`http://localhost:9000/favourites`)
+      fetch(`https://life-partner-server.vercel.app/favourites`)
         .then((res) => res.json())
         .then((favourites) => {
           const userFavourites = favourites.filter(
@@ -27,7 +27,7 @@ const FavouritesBiodatas = () => {
     // console.log(id)
     try {
       const response = await axios.delete(
-        `http://localhost:9000/favourites/${id}`
+        `https://life-partner-server.vercel.app/favourites/${id}`
       );
       if (response.status === 200) {
         setData(data.filter((item) => item._id !== id));

@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 const SuccessStory = () => {
   const [story, setStory] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:9000/success-stories")
+    fetch("https://life-partner-server.vercel.app/success-stories")
       .then((res) => res.json())
       .then((data) => setStory(data));
   }, []);

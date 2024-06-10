@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 const ManageUsers = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:9000/users")
+    fetch("https://life-partner-server.vercel.app/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
@@ -16,7 +16,7 @@ const ManageUsers = () => {
         status: "Premium",
       };
       const response = await axios.put(
-        `http://localhost:9000/users/${id}`,
+        `https://life-partner-server.vercel.app/users/${id}`,
         updatedUser
       );
       const updatedUsers = users.map((user) =>
@@ -35,7 +35,7 @@ const ManageUsers = () => {
         status: "Normal",
       };
       const response = await axios.put(
-        `http://localhost:9000/users/${id}`,
+        `https://life-partner-server.vercel.app/users/${id}`,
         updatedUser
       );
       const updatedUsers = users.map((user) =>
@@ -54,7 +54,7 @@ const ManageUsers = () => {
         role: "Admin",
       };
       const response = await axios.put(
-        `http://localhost:9000/users/${id}`,
+        `https://life-partner-server.vercel.app/users/${id}`,
         updatedUser
       );
       const updatedUsers = users.map((user) =>
@@ -73,7 +73,7 @@ const ManageUsers = () => {
         role: "User",
       };
       const response = await axios.put(
-        `http://localhost:9000/users/${id}`,
+        `https://life-partner-server.vercel.app/users/${id}`,
         updatedUser
       );
       const updatedUsers = users.map((user) =>

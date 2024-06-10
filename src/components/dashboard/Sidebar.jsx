@@ -25,7 +25,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:9000/users");
+        const response = await axios.get("https://life-partner-server.vercel.app/users");
         const match = response.data.find((u) => u?.email === user?.email);
         setUsers(match);
       } catch (err) {

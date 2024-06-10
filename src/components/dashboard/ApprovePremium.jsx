@@ -7,7 +7,7 @@ const ApprovePremium = ({ id }) => {
   useEffect(() => {
     // Assuming there's a function to get premium data based on id
     if (id) {
-      fetch(`http://localhost:9000/users/${id}`)
+      fetch(`https://life-partner-server.vercel.app/users/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setUser(data);
