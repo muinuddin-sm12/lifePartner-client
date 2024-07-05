@@ -14,7 +14,7 @@ const ApprovePremium = ({ id }) => {
         });
     }
   }, [id]);
-  console.log(user)
+  // console.log(user)
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full divide-y text-sm divide-gray-200">
