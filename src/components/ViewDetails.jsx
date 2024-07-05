@@ -21,7 +21,7 @@ const ViewDetails = () => {
     setRequestId(id)
     toast.success("Request Send Successfully!")
   }
-  console.log(data?._id)
+  // console.log(data?._id)
   return (
     <div className="p-6 border max-w-2xl rounded-2xl">
       <div className="flex items-center gap-2">
