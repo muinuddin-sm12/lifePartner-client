@@ -10,7 +10,7 @@ import {
   signOut,
   updateProfile,
 } from 'firebase/auth'
-import axios from 'axios'
+// import axios from 'axios'
 import { auth } from '../firebase/firebase.config'
 export const AuthContext = createContext(null)
 const googleProvider = new GoogleAuthProvider()
