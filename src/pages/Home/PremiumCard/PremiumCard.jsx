@@ -60,7 +60,7 @@ const PremiumCard = () => {
         {sortedBiodata?.slice(0, 8).map((data) => (
           <div
             key={data?._id}
-            className="w-full max-w-sm mx-auto rounded-lg p-6 flex flex-col overflow-hidden  border-[1px] shadow-lg dark:bg-gray-800 hover:border-[#E5007D] hover:scale-105 duration-200"
+            className="w-full max-w-sm mx-auto rounded-lg p-6 flex flex-col overflow-hidden  border-[1px] shadow-lg hover:border-[#E5007D] hover:scale-105 duration-200"
           >
             <div className="border-b pb-6">
               <div className="flex items-center gap-2">

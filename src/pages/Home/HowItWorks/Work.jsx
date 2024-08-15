@@ -14,7 +14,7 @@ const Work = () => {
             </div>
             <div className="w-full lg:px-52 px-6 mx-auto pt-10 pb-24">
                 {/* card  */}
-                <div className='grid grid-cols-2 space-y-10 gap-6
+                <div className='grid grid-cols-2  gap-6
                  md:grid-cols-2 lg:grid-cols-4'>
                     <WorkCard icon={icon_1} text='Create Account' number='1'/>
                     <WorkCard icon={icon_2} text='Browse Profiles' number='2'/>

@@ -12,7 +12,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <div className="w-full px-4 md:px-10 banner pt-12">
+    <div className="w-full px-4 md:px-10 banner pt-1 md:pt-12">
       <div className=" flex flex-col-reverse min-h-[28rem] md:min-h-[40rem] justify-center h-full mx-auto lg:flex-row lg:justify-between">
         <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
           <h1 className="text-2xl font-bold leading-none sm:text-5xl">
