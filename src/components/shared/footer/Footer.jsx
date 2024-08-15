@@ -3,8 +3,8 @@ import { FaLinkedin, FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react
 const Footer = () => {
   return (
     <div className="">
-      <footer className="bg-gray-200  00 w-full max-w-full overflow-x-hidden">
-        <div className="flex flex-col items-center py-8 md:flex-row md:justify-evenly">
+      <footer className="bg-gray-200 w-full max-w-full overflow-x-hidden">
+        <div className="flex flex-col items-start md:items-center justify-start py-8 md:flex-row md:justify-evenly">
           <div className="flex flex-col md:flex-row">
             <ul className="m-5 text-sm">
               <h3 className="mb-2 text-xl font-semibold">Life Partner</h3>
@@ -73,7 +73,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col items-center mt-4 md:mt-0">
+          <div className="flex flex-col items-center mt-4 md:mt-0 mx-auto md:mx-0">
             <h3 className="mb-2">Stay in Touch</h3>
             <form className="flex items-center">
               <input
