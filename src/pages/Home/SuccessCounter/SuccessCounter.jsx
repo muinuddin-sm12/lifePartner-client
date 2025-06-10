@@ -26,20 +26,20 @@ const SuccessCounter = () => {
       <div className="w-full text-center pb-20">
         <h3 className="text-3xl font-bold">Success Counter</h3>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full px-20 mx-auto">
-        <div className="flex flex-col items-center justify-between w-[200px] border rounded-xl px-4 py-8 h-36">
+      <div className="grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-2 w-full md:px-20 mx-auto">
+        <div className="flex flex-col items-center justify-between md:w-[200px] border rounded-xl px-4 py-8 h-36">
           <h2 className="text-xl font-medium">Total Biodata</h2>
           <p className="text-3xl font-bold"><span className="text-[#E5007D]">{total}</span>+</p>
         </div>
-        <div className="flex flex-col items-center justify-between w-[200px] border rounded-xl px-4 py-8 h-36">
+        <div className="flex flex-col items-center justify-between md:w-[200px] border rounded-xl px-4 py-8 h-36">
           <h2 className="text-xl font-medium">Total Girls</h2>
           <p className="text-3xl font-bold"><span className="text-[#E5007D]">{female}</span>+</p>
         </div>
-        <div className="flex flex-col items-center justify-between w-[200px] border rounded-xl px-4 py-8 h-36">
+        <div className="flex flex-col items-center justify-between md:w-[200px] border rounded-xl px-4 py-8 h-36">
           <h2 className="text-xl font-medium">Total Boys</h2>
           <p className="text-3xl font-bold"><span className="text-[#E5007D]">{male}</span>+</p>
         </div>
-        <div className="flex flex-col items-center justify-between w-[200px] border rounded-xl px-4 py-8 h-36">
+        <div className="flex flex-col items-center justify-between md:w-[200px] border rounded-xl px-4 py-8 h-36">
           <h2 className="text-xl font-medium">Total Marriages</h2>
           <p className="text-3xl font-bold"><span className="text-[#E5007D]">{success}</span>+</p>
         </div>
