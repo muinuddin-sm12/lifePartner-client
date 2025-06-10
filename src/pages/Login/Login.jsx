@@ -49,23 +49,23 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center min-h-screen ">
-      <div className="flex rounded-lg overflow-hidden sm:m-10">
-        <div className="max-w-md hidden lg:block">
-          <img src={loginImg} alt="" />
+    <div className="flex justify-center items-center h-screen">
+      <div className="flex md:h-[85vh] rounded-lg overflow-hidden sm:m-10">
+        <div className="max-w-md h-full hidden lg:block">
+          <img className="h-full object-cover bg-center" src={loginImg} alt="" />
         </div>
-        <div className="flex flex-col max-w-md p-6 bg-gray-100 text-gray-900">
-          <div className="mb-8 text-center">
-            <h1 className="my-3 text-4xl font-bold">Log In</h1>
+        <div className="flex flex-col max-w-md px-6 py-6 md:py-0 bg-gray-100 text-gray-900">
+          <div className="mb-5 text-center">
+            <h1 className="my-3 text-3xl font-bold">Log In</h1>
             <p className="text-sm text-gray-400">
               Sign in to access your account
             </p>
           </div>
           <form
             onSubmit={handleSubmit}
-            className="space-y-6 ng-untouched ng-pristine ng-valid"
+            className="space-y-4 ng-untouched ng-pristine ng-valid"
           >
-            <div className="space-y-4">
+            <div className="space-y-2">
               <div>
                 <label htmlFor="email" className="block mb-2 text-sm">
                   Email address
@@ -76,7 +76,7 @@ const Login = () => {
                   id="email"
                   required
                   placeholder="Enter Your Email Here"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#E5007D] bg-gray-200 text-gray-900"
+                  className="w-full px-2 py-1 border rounded-md border-gray-300 focus:outline-[#E5007D] bg-gray-200 text-gray-900"
                 />
               </div>
               <div>
@@ -91,7 +91,7 @@ const Login = () => {
                   id="password"
                   required
                   placeholder="*******"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#E5007D] bg-gray-200 text-gray-900"
+                  className="w-full px-2 py-1 border rounded-md border-gray-300 focus:outline-[#E5007D] bg-gray-200 text-gray-900"
                 />
               </div>
             </div>
@@ -99,7 +99,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="bg-[#E5007D] w-full rounded-md py-3 text-white"
+                className="bg-[#E5007D] w-full rounded-md py-2 text-white"
               >
                 Sign In
               </button>
@@ -120,9 +120,9 @@ const Login = () => {
 
           <button
             onClick={handleGoogleSignIn}
-            className="disabled:cursor-not-allowed flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer"
+            className="disabled:cursor-not-allowed flex justify-center items-center space-x-2 border m-2 p-2 border-gray-300 border-rounded cursor-pointer"
           >
-            <FcGoogle size={32} />
+            <FcGoogle size={25} />
 
             <p>Continue with Google</p>
           </button>

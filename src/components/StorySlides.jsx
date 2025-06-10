@@ -2,7 +2,7 @@
 const StorySlides = ({img, story, date, rating}) => {
   return (
     <div>
-      <div className="flex flex-col w-[280px] h-[320px] gap-3 lg:p-6 mx-auto rounded-md border">
+      <div className="flex flex-col md:w-[280px] w-full h-[320px] gap-3 lg:p-6 mx-auto rounded-md border">
         <div className="flex justify-between p-4">
           <div className="flex space-x-4 items-center">
             <div className="h-12 w-12 rounded-full overflow-hidden">
